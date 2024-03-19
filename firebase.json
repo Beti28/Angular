@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "my-first-app",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

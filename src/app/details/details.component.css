@@ -1,0 +1,41 @@
+.item-card {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Photo on the left, text on the right */
+    width: 100%; /* Adjust width as needed */
+    max-width: 1200px; /* Limit the maximum width */
+    margin: 20px auto; /* Center the card horizontally */
+    border-radius: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #cf370991;
+    box-shadow: 14px 14px 30px #464a4e, -14px -14px 30px #464a4e;
+    gap: 20px; /* Adjust spacing between photo and text */
+   margin-top: 50px;
+  }
+  
+  .item-card img {
+    width: 423px; /* Adjust the width of the image */
+    height: auto;
+    border-radius: 12px; /* Adjust border radius as needed */
+    object-fit: cover;
+  }
+  
+  .item-details {
+    color: #fff; /* Adjust text color */
+    padding-top: 50px;
+  }
+  .item-details {
+    flex: 1; /* Allow the text to grow to fill the remaining space */
+  }
+  
+  .item-card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .item-card p {
+    font-size: 16px;
+  }
+  
+  
+  
