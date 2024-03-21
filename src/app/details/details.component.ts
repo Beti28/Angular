@@ -3,6 +3,7 @@ import { DataService } from '../shared/data.service';
 import { Item } from '../model/item';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { AuthService } from '../shared/auth.service';
 
 @Component({
   selector: 'app-details',
@@ -12,41 +13,62 @@ import { Router } from '@angular/router';
 export class DetailsComponent implements OnInit {
   item: Item | undefined;
   isOwner: boolean = false; // Initialize isOwner to false
-  currentUser: string | undefined; // Define currentUser property
+  
+  currentUser: string = '';
+  itemId: any;
 
   constructor(
     private route: ActivatedRoute,
     private dataService: DataService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private authService: AuthService
+  ) { 
+    const user = this.authService.getCurrentUser();
+    this.currentUser = user !== null ? user : '';
+  }
 
   ngOnInit(): void {
     this.getItemDetails();
   }
 
   getItemDetails(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id) {
-      this.dataService.getItemById(id)
+    this.itemId = this.route.snapshot.paramMap.get('id');
+    if (this.itemId) { // Corrected from `id` to `this.itemId`
+      this.dataService.getItemById(this.itemId) // Corrected from `id` to `this.itemId`
         .subscribe(item => {
           this.item = item;
-          
+          console.log('Retrieved item:', this.item);
         });
     }
   }
-  editItem(): void {
-    // Logic to navigate to the edit page or perform edit action
-  }
 
-  deleteItem(item: Item) {
-    if (window.confirm('Are you sure you want to delete ' + item.name+ ' ?')) {
-      this.dataService.deleteItem(item)
-        .then(() => {
-          console.log('Item deleted successfully');
-          // Navigate to the catalog
-          this.router.navigate(['/catalog']);
-        })
-        .catch(error => console.error('Error deleting item:', error));
+  
+  isAdminUser(): boolean {
+
+    return this.currentUser === 'admin@gmail.com';
+  }
+  editItem(): void {
+    if (this.item) {
+      this.router.navigate(['/edit', this.item.id], { state: { item: this.item } });
+    } else {
+      console.error('Item data is not available');
+    }
+  }
+  deleteItem(): void {
+    if (this.itemId) {
+      if (confirm('Are you sure you want to delete this item?')) {
+        this.dataService.deleteItem(this.itemId)
+          .then(() => {
+            console.log('Item deleted successfully');
+            this.router.navigate(['/catalog']);
+          })
+          .catch(error => {
+            console.error('Error deleting item:', error);
+            // Handle error, such as displaying an error message to the user
+          });
+      }
+    } else {
+      console.error('Item ID is not provided');
     }
   }
 }

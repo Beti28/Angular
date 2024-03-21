@@ -18,6 +18,7 @@ export class AuthService {
       alert(err.message);
       this.router.navigate(['/login']);
     })
+    localStorage.setItem('currentUser', email);
   }
 
 
@@ -32,5 +33,10 @@ export class AuthService {
   }
   getCurrentUser(): string | null {
     return localStorage.getItem('currentUser');
+  }
+  isLoggedIn(): boolean {
+
+    const user = localStorage.getItem('user');
+    return !!user; // Convert to boolean. If user exists, return true; otherwise, return false
   }
 }

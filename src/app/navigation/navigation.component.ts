@@ -29,6 +29,7 @@ export class NavigationComponent implements OnInit {
     this.fireauth.signOut().then(
       () => {
         localStorage.removeItem('token');
+        localStorage.removeItem('currentUser');
         alert('You are logged out');
         this.router.navigate(['/']);
       },
@@ -37,4 +38,5 @@ export class NavigationComponent implements OnInit {
       }
     );
   }
+   
 }

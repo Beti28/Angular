@@ -1,0 +1,24 @@
+<form (ngSubmit)="save()">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="item.name" required>
+  </div>
+  <div>
+    <label for="weight">Weight:</label>
+    <input type="text" id="weight" name="weight" [(ngModel)]="item.weight" required>
+  </div>
+  <div>
+    <label for="price">Price:</label>
+    <input type="text" id="price" name="price" [(ngModel)]="item.price" required>
+  </div>
+  <div>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" [(ngModel)]="item.description" required></textarea>
+  </div>
+  <div>
+    <label for="photo">Photo:</label>
+    <input type="file" id="photo" name="photo" accept="image/*" (change)="onFileSelected($event)">
+  </div>
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  <button type="submit">Save</button>
+</form>

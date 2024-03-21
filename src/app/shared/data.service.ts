@@ -4,6 +4,7 @@ import { Item } from '../model/item';
 import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { interval } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -44,14 +45,26 @@ export class DataService {
     return this.afs.collection('/Upload').snapshotChanges();
   }
 
-  deleteItem(item: Item) {
-    return this.afs.doc('/Upload/' + item.id).delete()
-      .then(() => {
-        console.log('Item deleted successfully');
+  deleteItem(itemId: string): Promise<void> {
+    return this.afs.collection('Upload').doc(itemId).delete();
+  }
+  updateItem(item: Item): Promise<void> {
+    const docRef = this.afs.collection('/Upload').doc(item.id);
+  
+    return docRef.get().toPromise()
+      .then((docSnapshot) => {
+        if (docSnapshot && docSnapshot.exists) {
+          return docRef.update(item);
+        } else {
+          return docRef.set(item);
+        }
       })
-      .catch(error => {
-        console.error('Error deleting item:', error);
-        throw error; // Rethrow the error to propagate it to the caller
+      .then(() => {
+        console.log('Item updated successfully:', item);
+      })
+      .catch((error) => {
+        console.error('Error updating item:', error);
+        throw error; 
       });
   }
   editItem(item: Item): Promise<void> {
@@ -61,4 +74,6 @@ export class DataService {
   getItemById(itemId: string): Observable<Item | undefined> {
     return this.afs.collection('Upload').doc<Item>(itemId).valueChanges();
   }
+
+  
 }

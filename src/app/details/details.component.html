@@ -6,10 +6,8 @@
       <p>Weight: {{ item.weight }}</p>
       <p>Price: {{ item.price }}</p>
       <p>Description: {{ item.description }}</p>
-      <!-- Edit button -->
-      <button class="actionBtn" (click)="editItem()">Edit</button>
-      <!-- Delete button -->
-      <button  class="actionBtn" (click)="deleteItem(item)">Delete</button>
+      <button *ngIf="isAdminUser()" (click)="editItem()">Edit</button>
+      <button *ngIf="isAdminUser()" (click)="deleteItem()" class="btn btn-danger">Delete Document</button>
     </div>
   </div>
 </div>
