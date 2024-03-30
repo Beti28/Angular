@@ -1,4 +1,5 @@
 <form (ngSubmit)="addItem()">
+  <h1>Create</h1>
   <label for="name">Name:</label>
   <input type="text" id="name" name="name" [(ngModel)]="newItem.name">
 
@@ -14,7 +15,7 @@
   <label for="photo">Photo:</label>
   <input type="file" id="photo" name="photo" (change)="onFileSelected($event)">
 
-  <button type="submit">Add Item</button>
+  <button type="submit">Create Item</button>
 </form>
 
   

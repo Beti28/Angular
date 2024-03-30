@@ -75,5 +75,4 @@ export class DataService {
     return this.afs.collection('Upload').doc<Item>(itemId).valueChanges();
   }
 
-  
 }

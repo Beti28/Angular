@@ -12,8 +12,8 @@ import { AuthService } from '../shared/auth.service';
 })
 export class DetailsComponent implements OnInit {
   item: Item | undefined;
-  isOwner: boolean = false; // Initialize isOwner to false
-  
+  isOwner: boolean = false;
+  itemBought: boolean = false;
   currentUser: string = '';
   itemId: any;
 
@@ -29,22 +29,20 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getItemDetails();
+    this.checkItemBought();
   }
 
   getItemDetails(): void {
     this.itemId = this.route.snapshot.paramMap.get('id');
-    if (this.itemId) { // Corrected from `id` to `this.itemId`
-      this.dataService.getItemById(this.itemId) // Corrected from `id` to `this.itemId`
+    if (this.itemId) { 
+      this.dataService.getItemById(this.itemId) 
         .subscribe(item => {
           this.item = item;
           console.log('Retrieved item:', this.item);
         });
     }
   }
-
-  
   isAdminUser(): boolean {
-
     return this.currentUser === 'admin@gmail.com';
   }
   editItem(): void {
@@ -70,5 +68,13 @@ export class DetailsComponent implements OnInit {
     } else {
       console.error('Item ID is not provided');
     }
+  }
+  buyItem(): void {
+    this.itemBought = true;
+    localStorage.setItem(`item_${this.itemId}_bought`, 'true');
+  }
+  checkItemBought(): void {
+    const itemBought = localStorage.getItem(`item_${this.itemId}_bought`);
+    this.itemBought = itemBought === 'true';
   }
 }

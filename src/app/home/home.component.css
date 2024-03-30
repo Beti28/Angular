@@ -1,9 +1,10 @@
 .home-container {
     text-align: center;
     margin-top: 50px;
-    background-image: url(https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=1380&t=st=1710071282~exp=1710071882~hmac=83c4f0a4bb647f83c826706786a35792825ab3732eb9b90cc4395eb8b0c54e25);
+    background-image: url(../../assets/images/pexels-leon-ardho-1552252.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 88.5vh;
+    height: 82.6vh;
+    color: white;
   }

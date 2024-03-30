@@ -5,15 +5,18 @@ import { AuthService } from './shared/auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class PublicAuthGuard implements CanActivate {
+export class PrivateAuthGuard implements CanActivate {
 
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(): boolean {
+    console.log('PrivateAuthGuard executing...');
     if (!this.authService.isLoggedIn()) {
-      return true;
+      console.log('User is not logged in. Allow access to login/register pages.');
+      return true; // Allow access to the login/register pages for unauthenticated users
     } else {
-      this.router.navigate(['/home']);
+      console.log('User is logged in. Redirect away from login/register pages.');
+      this.router.navigate(['/private']); // Redirect logged-in users away from public pages
       return false;
     }
   }

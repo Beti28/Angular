@@ -6,8 +6,22 @@
       <p>Weight: {{ item.weight }}</p>
       <p>Price: {{ item.price }}</p>
       <p>Description: {{ item.description }}</p>
-      <button *ngIf="isAdminUser()" (click)="editItem()">Edit</button>
-      <button *ngIf="isAdminUser()" (click)="deleteItem()" class="btn btn-danger">Delete Document</button>
+      
+      <!-- Message displayed if item is bought -->
+      <div *ngIf="itemBought && !isAdminUser()" class="btn btn-danger">
+        You bought this item!
+      </div>
+      
+      <!-- Button to buy item if not bought and user is not admin -->
+      <div *ngIf="!itemBought && !isAdminUser()">
+        <button (click)="buyItem()">Buy Item</button>
+      </div>
+      
+      <!-- Buttons for admin user -->
+      <div *ngIf="isAdminUser()">
+        <button (click)="editItem()" class="btn btn-danger">Edit</button>
+        <button (click)="deleteItem()" class="btn btn-danger">Delete</button>
+      </div>
     </div>
   </div>
 </div>

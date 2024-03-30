@@ -35,8 +35,7 @@ export class AuthService {
     return localStorage.getItem('currentUser');
   }
   isLoggedIn(): boolean {
-
     const user = localStorage.getItem('user');
-    return !!user; // Convert to boolean. If user exists, return true; otherwise, return false
+    return !!user; 
   }
 }

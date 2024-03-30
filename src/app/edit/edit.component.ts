@@ -50,9 +50,14 @@ export class EditComponent implements OnInit {
   }
 
   onFileSelected(event: any) {
-    if (event.target.files && event.target.files.length > 0) {
-      const file = event.target.files[0];
-      console.log('Selected file:', file);
+    const fileInput = event.target as HTMLInputElement;
+    if (fileInput.files && fileInput.files.length > 0) {
+      const file = fileInput.files[0];
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.item.photo = reader.result as string;
+      };
+      reader.readAsDataURL(file);
     }
   }
 }
