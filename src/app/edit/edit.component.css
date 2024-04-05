@@ -1,45 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Honk:MORF,SHLN@14,59.8&family=Kalam:wght@300;400;700&family=Roboto+Slab:wght@100..900&display=swap');
-
-#edit-post {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
+.edit-form {
+  
+  padding: 10px 23px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-  margin-top: 30px;
+  border-radius: 20px;
+  background-color: #f9f9f9d3;
   font-family: "Roboto Slab", serif;
   font-style: normal;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 520px;
+ 
+  box-shadow: 6px 6px 20px #464a4e62, -6px -6px 20px #464a4e62;
 }
 
-#edit-post div {
+.edit-form div {
   margin-bottom: 10px;
 }
 
-#edit-post label {
+.edit-form label {
   display: block;
   font-weight: bold;
-  text-align: left;
+  text-align: left; 
 }
 
-#edit-post input[type="text"],
-#edit-post input[type="number"],
-#edit-post textarea {
-  width: 100%;
+.edit-form input[type="text"],
+.edit-form textarea {
+  width: 350px;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
 }
-
-#edit-post textarea {
-  height: 100px;
+.edit-form textarea{
+  height: 110px;
 }
 
-#edit-post button {
+.edit-form button {
   margin-top: 20px;
   padding: 10px 20px;
   background-color: #007bff;
@@ -49,11 +46,22 @@
   cursor: pointer;
 }
 
-#edit-post button:disabled {
+.edit-form button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
-#edit-post h1 {
+.edit-form h1 {
   text-align: center;
+}
+.edit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/angular-softuni-project-21b88.appspot.com/o/uploads%2Fphoto1712326119.jpeg?alt=media&token=aefc9a66-5ada-4708-b2a5-27107d654032);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

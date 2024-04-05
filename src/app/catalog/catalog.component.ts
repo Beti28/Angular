@@ -11,7 +11,7 @@ import { Item } from '../model/item';
 })
 export class CatalogComponent implements OnInit {
 
-  items$!: Observable<Item[]>; // Use definite assignment assertion modifier
+  items$!: Observable<Item[]>;
 
   constructor(private afs: AngularFirestore) { }
 

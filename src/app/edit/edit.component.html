@@ -1,4 +1,6 @@
-<form (ngSubmit)="save()">
+<div class="edit">
+<form (ngSubmit)="save()" class="edit-form">
+  <h1>Edit</h1>
   <div>
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" [(ngModel)]="item.name" required>
@@ -22,3 +24,4 @@
   <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
   <button type="submit">Save</button>
 </form>
+</div>

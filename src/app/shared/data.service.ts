@@ -23,14 +23,14 @@ export class DataService {
       photo: fileObj.photo
     };
 
-    // Return a Promise here
+
     return new Promise<void>((resolve, reject) => {
       this.afs.collection('/Upload').add(fileMeta)
         .then(() => {
-          resolve(); // Resolve the Promise when the operation is completed
+          resolve();
         })
         .catch((error) => {
-          reject(error); // Reject the Promise if an error occurs
+          reject(error); 
         });
     });
   }
@@ -46,18 +46,24 @@ export class DataService {
   }
 
   deleteItem(itemId: string): Promise<void> {
-    return this.afs.collection('Upload').doc(itemId).delete();
+
+    return this.afs.collection('Upload').doc(itemId).delete()
+      .then(() => {
+        console.log('Item deleted successfully:', itemId);
+      })
+      .catch((error) => {
+        console.error('Error deleting item:', error);
+        throw error; 
+      });
   }
   updateItem(item: Item): Promise<void> {
     const docRef = this.afs.collection('/Upload').doc(item.id);
-  
-    return docRef.get().toPromise()
-      .then((docSnapshot) => {
-        if (docSnapshot && docSnapshot.exists) {
-          return docRef.update(item);
-        } else {
-          return docRef.set(item);
-        }
+    
+
+return this.deleteItem(item.id)
+      .then(() => {
+
+        return docRef.set(item);
       })
       .then(() => {
         console.log('Item updated successfully:', item);

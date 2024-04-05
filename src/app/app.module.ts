@@ -41,7 +41,7 @@ import { EditComponent } from './edit/edit.component';
     RouterModule,
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
    ],
   //provideFirebaseApp(() => initializeApp({"projectId":"angular-softuni-project-21b88","appId":"1:147986316750:web:f71e429729a9d8fee07f9f","storageBucket":"angular-softuni-project-21b88.appspot.com","apiKey":"AIzaSyB0BLEPahUCpf0FIfejuqJV37x238pZ4Xk","authDomain":"angular-softuni-project-21b88.firebaseapp.com","messagingSenderId":"147986316750","measurementId":"G-S07HMHV82K"})), provideAuth(() => getAuth()), provideFirestore(() => getFirestore()), provideDatabase(() => getDatabase()), provideStorage(() => getStorage())
   providers: [],

@@ -4,7 +4,7 @@ import { DataService } from '../shared/data.service';
 import { AuthService } from '../shared/auth.service';
 import { AngularFireStorage } from '@angular/fire/compat/storage'; 
 import { finalize } from 'rxjs/operators';
-import { Router } from '@angular/router'; // Import Router service
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-create',
@@ -24,12 +24,12 @@ export class CreateComponent implements OnInit {
   };
 
   selectedFile: File | null = null;
-  isUploading = false; // Flag to track if file is currently being uploaded
+  isUploading = false; 
 
   constructor(private dataService: DataService, 
               private storage: AngularFireStorage,
               private router: Router,
-             ) { } // Inject Router service
+             ) { } 
 
               ngOnInit(): void {
                
@@ -44,7 +44,7 @@ export class CreateComponent implements OnInit {
       return;
     }
 
-    this.isUploading = true; // Set uploading flag to true
+    this.isUploading = true;
 
     const filePath = `uploads/${this.selectedFile.name}`;
     const fileRef = this.storage.ref(filePath);
@@ -53,8 +53,8 @@ export class CreateComponent implements OnInit {
     uploadTask.snapshotChanges().pipe(
       finalize(() => {
         fileRef.getDownloadURL().subscribe((downloadURL: string) => {
-          this.newItem.photo = downloadURL; // Set the photo URL in the newItem object
-          this.saveItem(); // Proceed to save the item
+          this.newItem.photo = downloadURL; 
+          this.saveItem(); 
         });
       })
     ).subscribe();

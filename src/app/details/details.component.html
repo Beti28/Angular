@@ -1,26 +1,25 @@
-<div *ngIf="item">
+<div *ngIf="item" class="wrapper">
   <div class="item-card">
     <img [src]="item.photo" alt="{{ item.name }} Photo">
     <div class="item-details">
       <h2>{{ item.name }}</h2>
+      <div class="det">
       <p>Weight: {{ item.weight }}</p>
       <p>Price: {{ item.price }}</p>
       <p>Description: {{ item.description }}</p>
-      
-      <!-- Message displayed if item is bought -->
-      <div *ngIf="itemBought && !isAdminUser()" class="btn btn-danger">
-        You bought this item!
-      </div>
-      
-      <!-- Button to buy item if not bought and user is not admin -->
-      <div *ngIf="!itemBought && !isAdminUser()">
-        <button (click)="buyItem()">Buy Item</button>
-      </div>
-      
-      <!-- Buttons for admin user -->
+    </div>
+
+    <div *ngIf="itemBought && !isAdminUser()">
+      You bought this item!
+    </div>
+
+    <div *ngIf="!itemBought && !isAdminUser() && currentUser">
+      <button (click)="buyItem()">Buy Item</button>
+    </div>
+
       <div *ngIf="isAdminUser()">
-        <button (click)="editItem()" class="btn btn-danger">Edit</button>
-        <button (click)="deleteItem()" class="btn btn-danger">Delete</button>
+        <button (click)="editItem()">Edit</button>
+        <button (click)="deleteItem()" >Delete</button>
       </div>
     </div>
   </div>

@@ -62,7 +62,7 @@ export class DetailsComponent implements OnInit {
           })
           .catch(error => {
             console.error('Error deleting item:', error);
-            // Handle error, such as displaying an error message to the user
+           
           });
       }
     } else {
@@ -70,11 +70,19 @@ export class DetailsComponent implements OnInit {
     }
   }
   buyItem(): void {
-    this.itemBought = true;
-    localStorage.setItem(`item_${this.itemId}_bought`, 'true');
+    if (!this.isAdminUser()) {
+      this.itemBought = true;
+      localStorage.setItem(`item_${this.itemId}_bought_${this.currentUser}`, 'true');
+    } else {
+      console.log('Admins cannot buy items.');
+    }
   }
   checkItemBought(): void {
-    const itemBought = localStorage.getItem(`item_${this.itemId}_bought`);
-    this.itemBought = itemBought === 'true';
+    if (!this.isAdminUser()) {
+      const itemBought = localStorage.getItem(`item_${this.itemId}_bought_${this.currentUser}`);
+      this.itemBought = itemBought === 'true';
+    } else {
+      console.log('Admins cannot buy items.');
+    }
   }
 }

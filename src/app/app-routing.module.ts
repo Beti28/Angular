@@ -7,19 +7,19 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { CreateComponent } from './create/create.component';
 import { DetailsComponent } from './details/details.component';
 import { AuthGuard } from './auth.guard';
-import { PrivateAuthGuard } from './public-auth.guard';
+import { GuestGuard } from './public-auth.guard'; 
 import { EditComponent } from './edit/edit.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'catalog', component: CatalogComponent },
-  { path: 'create', component: CreateComponent }, 
-  { path: 'register', component: RegisterComponent }, 
-  { path: 'login', component: LoginComponent}, 
-  { path: 'details/:id', component: DetailsComponent },
+  { path: 'create', component: CreateComponent}, 
+  { path: 'register', component: RegisterComponent, canActivate: [GuestGuard] }, 
+  { path: 'login', component: LoginComponent, canActivate: [GuestGuard] }, 
+  { path: 'details/:id', component: DetailsComponent}, 
   { path: 'edit/:id', component: EditComponent}, 
-  { path: '**', component: NotFoundComponent}
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({

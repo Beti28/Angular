@@ -1,56 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Honk:MORF,SHLN@14,59.8&family=Kalam:wght@300;400;700&family=Roboto+Slab:wght@100..900&display=swap');
 
-    form {
-      max-width: 350px;
-      margin: 0 auto;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 20px;
-      background-color: #f9f9f9;
-      font-family: "Roboto Slab", serif;
-      font-style: normal;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 420px;
-      margin-top: 34px;
-      box-shadow: 6px 6px 20px #464a4e62, -6px -6px 20px #464a4e62;
-    }
+form {
+  max-width: 350px;
+  border: 1px solid #ccc;
+  padding: 0px 70px;
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: #f9f9f9cd;
+  font-family: "Roboto Slab", serif;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 420px;
+  box-shadow: 6px 6px 20px #464a4e62, -6px -6px 20px #464a4e62;
 
-    form div {
-      margin-bottom: 10px;
-    }
+}
 
-    form label {
-      display: block;
-      font-weight: bold;
-      text-align: left; 
-    }
+form div {
+  margin-bottom: 10px;
+}
 
-    form input[type="email"],
-    form input[type="password"] {
-      width: 100%;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
+form label {
+  display: block;
+  font-weight: bold;
+  text-align: left;
+}
 
-    form button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
+form input[type="email"],
+form input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 
-    form button:disabled {
-      background-color: #ccc;
-      cursor: not-allowed;
-    }
+form button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-    form h1 {
-      text-align: center;
-    }
+form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+form h1 {
+  text-align: center;
+}
+
+#register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/angular-softuni-project-21b88.appspot.com/o/uploads%2FDALL%C2%B7E_2024_04_05_11_31_31_Create_a_realistic_image_of_a_gym_equipment.png?alt=media&token=baf875e4-56fa-437e-add4-cca409aedf8d);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.text {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
