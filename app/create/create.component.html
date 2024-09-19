@@ -1,0 +1,22 @@
+<div class="create">
+<form (ngSubmit)="addItem()">
+  <h1>Create</h1>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" [(ngModel)]="newItem.name">
+
+  <label for="weight">Weight:</label>
+  <input type="text" id="weight" name="weight" [(ngModel)]="newItem.weight">
+
+  <label for="price">Price:</label>
+  <input type="text" id="price" name="price" [(ngModel)]="newItem.price">
+
+  <label for="description">Description:</label>
+  <textarea id="description" name="description" [(ngModel)]="newItem.description"></textarea>
+
+  <label for="photo">Photo:</label>
+  <input type="file" id="photo" name="photo" (change)="onFileSelected($event)">
+
+  <button type="submit">Create Item</button>
+</form>
+</div>
+  

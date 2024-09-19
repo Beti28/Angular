@@ -1,0 +1,9 @@
+<div *ngIf="user">
+  
+  <p>Email: {{ user.email }}</p>
+  <p *ngIf="user.name">Name: {{ user.name }}</p>
+  <p *ngIf="user.birth">Birthday: {{ user.birth }}</p>
+</div>
+<div *ngIf="!user">
+  <p>No user logged in</p>
+</div>

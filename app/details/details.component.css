@@ -1,0 +1,75 @@
+.item-card {
+    display:flex;
+    padding: 80px 250px;
+    gap: 60px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    background: #12121191;
+    box-shadow: 14px 14px 30px #464a4e, -14px -14px 30px #464a4e;
+    
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+  
+  }
+  
+  .item-card img {
+    width: 423px;
+    height:423px;
+    border-radius: 12px; 
+    margin-left: -200px;
+  }
+  
+  .item-details {
+    color: #fff;
+   margin-top: -120px;
+  }
+  .item-details {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  }
+  
+  .item-card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .item-card p {
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin-right: 10px; 
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+
+  .item-bought-message {
+    color: red;
+  }
+  
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/angular-softuni-project-21b88.appspot.com/o/uploads%2FDALL%C2%B7E_2024_04_05_12_08_22_Create_a_realistic_image_with_the_center.png?alt=media&token=738c2e0a-4456-42ac-b3e7-3f10a643a2ff);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.det{
+  display: flex;
+  justify-content:flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 20vw;
+}
