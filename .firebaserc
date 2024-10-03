@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-softuni-project-21b88": {
+      "hosting": {
+        "my-first-app": [
+          "angular-softuni-project-21b88"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-softuni-project-21b88"
+  }
+}
