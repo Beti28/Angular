@@ -20,7 +20,7 @@ FitBuddy is web application that is used to create publications for selling fitn
 
 # Demo Link: 🔗
 
-### https://reactjs-softuni-project.web.app
+### https://angular-softuni-project-21b88.web.app
 
 
 # Technologies Used:  
