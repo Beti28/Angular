@@ -1,0 +1,9 @@
+<div class="catalog">
+  <div *ngFor="let item of items$ | async" class="catalog-item">
+    <img [src]="item.photo" alt="{{ item.name }}">
+    <h3>{{ item.name }}</h3>
+    <h3>Weight: {{ item.weight }}kg</h3>
+    <h3>Price: ${{ item.price }}</h3>
+    <button [routerLink]="['/details', item.id]" class="details-button">Details</button>
+  </div>
+</div>

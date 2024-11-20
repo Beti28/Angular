@@ -1,0 +1,12 @@
+<div id="profile-page">
+  <div class="profileForm">
+    <form>
+      <div *ngIf="user" id="profile">
+        <h1>Profile</h1>
+        <p>Email: {{ user.email }}</p>
+        <p *ngIf="user.name">Name: {{ user.name }}</p>
+        <p *ngIf="user.birth">Birthday: {{ user.birth | date: 'dd.MM.yyyy' }}</p>
+      </div>
+    </form>
+  </div>
+</div>
