@@ -15,7 +15,7 @@ FitBuddy is web application that is used to create publications for selling fitn
 
 ## Deploy to Firebase
 
-  - npm run build
+  - run ng build
   - firebase deploy
 
 # Demo Link: 🔗
