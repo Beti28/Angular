@@ -4,7 +4,7 @@ FitBuddy
 
 # About the Project: 📚
 
-FitBuddy is web application that is used to create publications for selling fitness equipment.Users can add a new item with all the necessary details. Guests can also buy the items. Only admin account (admin@gmail.com) can edit and delete items. 
+FitBuddy is web application that is used to create publications for selling fitness equipment.Users can add a new item with all the necessary details. Guests can see the catalog and make registration. Only admin account (admin@admin.com) can edit and delete items. 
 
 # Setup / Installation: 💻
 
