@@ -12,7 +12,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 420px;
+  height: 520px;
   box-shadow: 6px 6px 20px #464a4e62, -6px -6px 20px #464a4e62;
 
 }
@@ -28,8 +28,10 @@ form label {
 }
 
 form input[type="email"],
-form input[type="password"] {
-  width: 100%;
+form input[type="password"],
+form input[type="text"],
+form input[type="date"]{
+  
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -53,6 +55,7 @@ form button:disabled {
 
 form h1 {
   text-align: center;
+  margin-bottom: 23px;
 }
 
 #register-page {
@@ -61,7 +64,7 @@ form h1 {
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background-image: url(https://firebasestorage.googleapis.com/v0/b/angular-softuni-project-21b88.appspot.com/o/uploads%2FDALL%C2%B7E_2024_04_05_11_31_31_Create_a_realistic_image_of_a_gym_equipment.png?alt=media&token=baf875e4-56fa-437e-add4-cca409aedf8d);
+  background-image: url(../../assets/Fitness_gym_interior_sunset_16_9.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -73,4 +76,10 @@ form h1 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+#birth{
+  width:182px;
+}
+#name{
+  width: 182px;
 }

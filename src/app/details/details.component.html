@@ -4,19 +4,10 @@
     <div class="item-details">
       <h2>{{ item.name }}</h2>
       <div class="det">
-      <p>Weight: {{ item.weight }}</p>
-      <p>Price: {{ item.price }}</p>
+      <p>Weight: {{ item.weight }}kg</p>
+      <p>Price: ${{ item.price }}</p>
       <p>Description: {{ item.description }}</p>
     </div>
-
-    <div *ngIf="itemBought && !isAdminUser()">
-      You bought this item!
-    </div>
-
-    <div *ngIf="!itemBought && !isAdminUser() && currentUser">
-      <button (click)="buyItem()">Buy Item</button>
-    </div>
-
       <div *ngIf="isAdminUser()">
         <button (click)="editItem()">Edit</button>
         <button (click)="deleteItem()" >Delete</button>

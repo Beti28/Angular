@@ -6,10 +6,12 @@ import { RegisterComponent } from './register/register.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { CreateComponent } from './create/create.component';
 import { DetailsComponent } from './details/details.component';
-import { AuthGuard } from './auth.guard';
+import { AuthGuard } from './core/auth.guard';
 import { GuestGuard } from './public-auth.guard'; 
 import { EditComponent } from './edit/edit.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ProfileComponent } from './profile/profile.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,7 +21,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [GuestGuard] }, 
   { path: 'details/:id', component: DetailsComponent}, 
   { path: 'edit/:id', component: EditComponent}, 
-  { path: '**', component: NotFoundComponent }
+  { path: 'profile', component: ProfileComponent },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({

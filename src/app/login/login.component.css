@@ -5,7 +5,7 @@ form {
   padding: 0px 40px;
   border: 1px solid #ccc;
   border-radius: 20px;
-  background-color: #f9f9f9dc;
+  background-color: #f9f9f9e1;
   margin-top: 30px;
   font-family: "Roboto Slab", serif;
   font-style: normal;
@@ -52,6 +52,8 @@ form button:disabled {
 
 form h1 {
   text-align: center;
+  padding: 7px;
+  margin-bottom: 23px;
 }
 
 #login-page {

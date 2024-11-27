@@ -30,6 +30,7 @@ export class NavigationComponent implements OnInit {
       () => {
         localStorage.removeItem('token');
         localStorage.removeItem('currentUser');
+        localStorage.removeItem('userInfo');
         alert('You are logged out');
         this.router.navigate(['/']);
       },

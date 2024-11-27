@@ -5,7 +5,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
@@ -20,6 +20,14 @@ import { CreateComponent } from './create/create.component';
 import { DetailsComponent } from './details/details.component';
 import { DataService } from './shared/data.service';
 import { EditComponent } from './edit/edit.component';
+import { ProfileComponent } from './profile/profile.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+
+
+
 
 
 
@@ -34,6 +42,7 @@ import { EditComponent } from './edit/edit.component';
     CatalogComponent,
     DetailsComponent,
     EditComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +51,10 @@ import { EditComponent } from './edit/edit.component';
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    
+    
+    
    ],
   //provideFirebaseApp(() => initializeApp({"projectId":"angular-softuni-project-21b88","appId":"1:147986316750:web:f71e429729a9d8fee07f9f","storageBucket":"angular-softuni-project-21b88.appspot.com","apiKey":"AIzaSyB0BLEPahUCpf0FIfejuqJV37x238pZ4Xk","authDomain":"angular-softuni-project-21b88.firebaseapp.com","messagingSenderId":"147986316750","measurementId":"G-S07HMHV82K"})), provideAuth(() => getAuth()), provideFirestore(() => getFirestore()), provideDatabase(() => getDatabase()), provideStorage(() => getStorage())
   providers: [],

@@ -29,7 +29,6 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getItemDetails();
-    this.checkItemBought();
   }
 
   getItemDetails(): void {
@@ -43,7 +42,7 @@ export class DetailsComponent implements OnInit {
     }
   }
   isAdminUser(): boolean {
-    return this.currentUser === 'admin@gmail.com';
+    return this.currentUser === 'admin@admin.com';
   }
   editItem(): void {
     if (this.item) {
@@ -69,20 +68,6 @@ export class DetailsComponent implements OnInit {
       console.error('Item ID is not provided');
     }
   }
-  buyItem(): void {
-    if (!this.isAdminUser()) {
-      this.itemBought = true;
-      localStorage.setItem(`item_${this.itemId}_bought_${this.currentUser}`, 'true');
-    } else {
-      console.log('Admins cannot buy items.');
-    }
-  }
-  checkItemBought(): void {
-    if (!this.isAdminUser()) {
-      const itemBought = localStorage.getItem(`item_${this.itemId}_bought_${this.currentUser}`);
-      this.itemBought = itemBought === 'true';
-    } else {
-      console.log('Admins cannot buy items.');
-    }
-  }
+  
+  
 }
